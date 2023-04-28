@@ -15,7 +15,7 @@ public class LevelSelectionButton : MonoBehaviour
     {
         _button.onClick.AddListener(() =>
         {
-            LevelDataManager.Instance.LoadNewLevelData(levelDataSo);
+            LevelDataHolder.Instance.LoadNewLevelData(levelDataSo);
         });
     }
 }

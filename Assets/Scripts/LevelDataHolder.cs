@@ -10,9 +10,9 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-public class LevelDataManager : MonoBehaviour
+public class LevelDataHolder : MonoBehaviour
 {
-    public static LevelDataManager Instance { get; private set; }
+    public static LevelDataHolder Instance { get; private set; }
 
     private const string MAIN_GAME_SCENE = "MainGame";
 
@@ -21,7 +21,7 @@ public class LevelDataManager : MonoBehaviour
     private LevelDataSO _levelDataSo;
     private MidiFile _midiFile;
     private Note[] _notesArray;
-    private List<float> _timeStamps;
+    private List<double> _timeStamps;
 
     private void Awake()
     {
@@ -34,7 +34,6 @@ public class LevelDataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 
     public void LoadNewLevelData(LevelDataSO levelDataSO)
@@ -96,11 +95,11 @@ public class LevelDataManager : MonoBehaviour
     
     private void SetTimeStamps()
     {
-        _timeStamps = new List<float>();
+        _timeStamps = new List<double>();
         foreach (var note in _notesArray)
         {
             var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, _midiFile.GetTempoMap());
-            _timeStamps.Add((float)metricTimeSpan.TotalMicroseconds / 1000000f);
+            _timeStamps.Add((double)metricTimeSpan.TotalMicroseconds / 1000000f);
         }
     }
     
@@ -121,7 +120,7 @@ public class LevelDataManager : MonoBehaviour
         return _notesArray;
     }
 
-    public float GetTimeStamps(int index)
+    public double GetTimeStamps(int index)
     {
         return _timeStamps[index];
     }
