@@ -36,7 +36,7 @@ public class LevelGameManager : MonoBehaviour
     {
         while (GetMusicSourceTime() >= LevelDataManager.Instance.GetTimeStamps(_spawnIndex))
         {
-            print(_notesArray[_spawnIndex].NoteNumber);
+            print(_notesArray[_spawnIndex].NoteName);
             _spawnIndex++;
         }
     }
