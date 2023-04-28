@@ -30,6 +30,8 @@ public class LevelGameManager : MonoBehaviour
         {
             _isFirstUpdate = false;
             GameStateManager.onStateChanged?.Invoke(this, GameStateManager.State.Countdown);
+            print(_notesArray[_spawnIndex].NoteNumber);
+            _spawnIndex++;
         }
     }
 }

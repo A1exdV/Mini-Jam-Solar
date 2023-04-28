@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 278b7bbe13eda574995dc0bd5f9319bd, type: 3}
-  midiFileLocation: MIDI map/Level1_map.mid
+  midiFileLocation: MIDI map/Level1_map

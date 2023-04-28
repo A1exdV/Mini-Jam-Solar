@@ -14,8 +14,6 @@ public class LevelDataManager : MonoBehaviour
 {
     public static LevelDataManager Instance { get; private set; }
 
-    private const string MAIN_GAME_SCENE = "MainGame";
-
     public EventHandler OnLevelDataLoading;
 
     private LevelDataSO _levelDataSo;
@@ -48,7 +46,7 @@ public class LevelDataManager : MonoBehaviour
     
     private void SetDataFromSO(LevelDataSO levelDataSO)
     {
-        SceneManager.LoadScene(MAIN_GAME_SCENE);
+        SceneManager.LoadScene(1);
 
         _levelDataSo = levelDataSO;
         _midiFile = null;
