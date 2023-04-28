@@ -11,8 +11,9 @@ namespace UI
     {
         [SerializeField] private float maxCountdownTimer = 3;
         [SerializeField] private TextMeshProUGUI countdownText;
+        
         private float _timer;
-
+        private float _noteSpawnAdvance;
         private void Awake()
         {
             countdownText.gameObject.SetActive(false);
@@ -20,6 +21,7 @@ namespace UI
 
         private void Start()
         {
+            _noteSpawnAdvance = TimeManager.Instance.GetNoteSpawnAdvance();
             GameStateManager.onStateCountdown +=  GameStateManager_OnStateCountdown;
         }
 
@@ -30,7 +32,7 @@ namespace UI
                 return;
             }
 
-            if (TimeManager.Instance.TimeBeforeNoteByIndex(0) < maxCountdownTimer)
+            if (TimeManager.Instance.TimeBeforeNoteByIndex(0)-_noteSpawnAdvance < maxCountdownTimer)
             {
                 print($"{TimeManager.Instance.TimeBeforeNoteByIndex(0)}");
                 maxCountdownTimer = TimeManager.Instance.TimeBeforeNoteByIndex(0);
@@ -42,7 +44,7 @@ namespace UI
 
         private void Update()
         {
-            if (TimeManager.Instance.TimeBeforeNoteByIndex(0) > _timer)
+            if (TimeManager.Instance.TimeBeforeNoteByIndex(0)-_noteSpawnAdvance > _timer)
             {
                 return;
             }

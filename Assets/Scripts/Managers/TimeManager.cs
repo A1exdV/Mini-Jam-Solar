@@ -8,6 +8,7 @@ namespace Managers
         public static TimeManager Instance { get; private set; }
 
         [SerializeField] private AudioSource musicSource;
+        [SerializeField] private float noteSpawnAdvance = 2f;
 
         public EventHandler onStopTime;
         public EventHandler onPlayTime;
@@ -35,11 +36,16 @@ namespace Managers
             return (float)musicSource.timeSamples / musicSource.clip.frequency;
         }
 
+        public float GetNoteSpawnAdvance()
+        {
+            return noteSpawnAdvance;
+        }
+
         private void OnPlayTime(object sender, EventArgs e)
         {
             Time.timeScale = 1;
         }
-
+        
         private void OnStopTime(object sender, EventArgs e)
         {
             Time.timeScale = 0;
