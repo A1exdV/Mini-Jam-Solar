@@ -121,7 +121,7 @@ public class LevelDataManager : MonoBehaviour
         return _notesArray;
     }
 
-    public float GetTimeStamps(int index)
+    public float GetTimeStampByIndex(int index)
     {
         return _timeStamps[index];
     }
