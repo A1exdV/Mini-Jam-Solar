@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7494f01673149d4aea25754c0efda50, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 31f3c205c8a27f846ab0a46bb9fbcef2, type: 3}
-  midiFileLocation: Beat Only as Midi.mid
+  audioClip: {fileID: 8300000, guid: c33a2cb9b9c2a63498fcdfae015b3f50, type: 3}
+  midiFileLocation: Level02.mid
+  spawnTimeAdvance: 2
   noteNameUp: 0
   noteNameLeft: 1
   noteNameRight: 2

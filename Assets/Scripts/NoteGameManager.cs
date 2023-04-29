@@ -33,7 +33,7 @@ public class NoteGameManager : MonoBehaviour
     
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private GameObject notePrefab;
-    [SerializeField] private float spawnTimeAdvance = 0.5f;
+    [SerializeField] private float deltaHit = 0.15f;
 
     private NoteName _noteNameUp;
     private NoteName _noteNameLeft;
@@ -48,8 +48,13 @@ public class NoteGameManager : MonoBehaviour
     private LevelDataSO _levelDataSo;
     private Note[] _notesArray;
 
+    private float _spawnTimeAdvance;
+    
     private int _visibleIndex;
-    private int _hitIndex;
+    private int _hitIndexUp;
+    private int _hitIndexLeft;
+    private int _hitIndexRight;
+    private int _hitIndexDown;
     
     private List<NoteData> _noteDataList;
     
@@ -57,6 +62,9 @@ public class NoteGameManager : MonoBehaviour
     private List<NoteData> _noteDataListLeft;
     private List<NoteData> _noteDataListRight;
     private List<NoteData> _noteDataListDown;
+
+    public static int score;
+    public static int hitInARow;
     
     private void Awake()
     {
@@ -73,6 +81,8 @@ public class NoteGameManager : MonoBehaviour
     private void Start()
     {
         _visibleIndex = 0;
+        score = 0;
+        hitInARow = 0;
         _noteDataList = new List<NoteData>();
         
         _noteDataListUp = new List<NoteData>();
@@ -86,6 +96,12 @@ public class NoteGameManager : MonoBehaviour
         _noteNameLeft = _levelDataSo.noteNameLeft;
         _noteNameRight = _levelDataSo.noteNameRight;
         _noteNameDown = _levelDataSo.noteNameDown;
+        _spawnTimeAdvance = _levelDataSo.spawnTimeAdvance;
+        
+        InputManager.Instance.OnUpAction += InputManager_OnUpAction;
+        InputManager.Instance.OnLeftAction += InputManager_OnLeftAction;
+        InputManager.Instance.OnRightAction += InputManager_OnRightAction;
+        InputManager.Instance.OnDownAction += InputManager_OnDownAction;
         
         
         musicSource.clip = _levelDataSo.audioClip;
@@ -93,24 +109,74 @@ public class NoteGameManager : MonoBehaviour
         _notesArray = LevelDataHolder.Instance.GetNotesArray();
         InstantiateAllNotes();
     }
+
+    private void InputManager_OnDownAction(object sender, EventArgs e)
+    {
+        OnInputPerformed(ref _hitIndexDown,_noteDataListDown);
+    }
+
+    private void InputManager_OnRightAction(object sender, EventArgs e)
+    {
+        OnInputPerformed(ref _hitIndexRight,_noteDataListRight);
+    }
+
+    private void InputManager_OnLeftAction(object sender, EventArgs e)
+    {
+        OnInputPerformed(ref _hitIndexLeft,_noteDataListLeft);
+    }
+
+    private void InputManager_OnUpAction(object sender, EventArgs e)
+    {
+        OnInputPerformed(ref _hitIndexUp,_noteDataListUp);
+    }
+
     private void Update()
     {
-        while (_visibleIndex < _noteDataList.Count && _noteDataList[_visibleIndex].TimeStamp <= GetMusicSourceTime() + spawnTimeAdvance)
+        CheckForVisibleNotes();
+        CheckForMiss();
+    }
+
+    private void CheckForVisibleNotes()
+    {
+        while (_visibleIndex < _noteDataList.Count && _noteDataList[_visibleIndex].TimeStamp <= GetMusicSourceTime() + _spawnTimeAdvance)
         {
-            _noteDataList[_visibleIndex].onNoteMakeVisible?.Invoke(this, spawnTimeAdvance);
+            _noteDataList[_visibleIndex].onNoteMakeVisible?.Invoke(this, _noteDataList[_visibleIndex].TimeStamp- GetMusicSourceTime());
             _visibleIndex++;
-        }
-        
-        
-        //temp on hit time 
-        while (_hitIndex < _noteDataList.Count && GetMusicSourceTime() >= _noteDataList[_hitIndex].TimeStamp)
-        {
-            _noteDataList[_hitIndex].onNoteDestroy?.Invoke(this,EventArgs.Empty);
-            print("Destroyed");
-            _hitIndex++;
         }
     }
 
+    private void CheckForMiss()
+    {
+        if (_hitIndexUp < _noteDataListUp.Count && GetMusicSourceTime() >= _noteDataListUp[_hitIndexUp].TimeStamp + deltaHit)
+        {
+            _noteDataListUp[_hitIndexUp].onNoteDestroy?.Invoke(this,EventArgs.Empty);
+            print("miss up");
+            _hitIndexUp++;
+            hitInARow = 0;
+        }
+        if (_hitIndexLeft < _noteDataListLeft.Count && GetMusicSourceTime() >= _noteDataListLeft[_hitIndexLeft].TimeStamp + deltaHit)
+        {
+            _noteDataListLeft[_hitIndexLeft].onNoteDestroy?.Invoke(this,EventArgs.Empty);
+            print("miss left");
+            _hitIndexLeft++;
+            hitInARow = 0;
+        }
+        if (_hitIndexRight < _noteDataListRight.Count && GetMusicSourceTime() >= _noteDataListRight[_hitIndexRight].TimeStamp + deltaHit)
+        {
+            _noteDataListRight[_hitIndexRight].onNoteDestroy?.Invoke(this,EventArgs.Empty);
+            print("miss right");
+            _hitIndexRight++;
+            hitInARow = 0;
+        }
+        if (_hitIndexDown < _noteDataListDown.Count && GetMusicSourceTime() >= _noteDataListDown[_hitIndexDown].TimeStamp + deltaHit)
+        {
+            _noteDataListDown[_hitIndexDown].onNoteDestroy?.Invoke(this,EventArgs.Empty);
+            print("miss down");
+            _hitIndexDown++;
+            hitInARow = 0;
+        }
+        
+    }
     private void InstantiateAllNotes()
     {
         for (var index = 0; index < _notesArray.Length; index++)
@@ -158,5 +224,29 @@ public class NoteGameManager : MonoBehaviour
     public double GetMusicSourceTime()
     {
         return (double)musicSource.timeSamples / musicSource.clip.frequency;
+    }
+
+    private void OnInputPerformed(ref int index, List<NoteData> noteDataList)
+    {
+        if (index >= noteDataList.Count)
+        {
+            print($"Out of notes. index - {index}, count - {noteDataList.Count} ");
+            return;
+        }
+        var noteData = noteDataList[index];
+        if (index < noteDataList.Count && (GetMusicSourceTime() >= noteData.TimeStamp - deltaHit &&  GetMusicSourceTime() <= noteData.TimeStamp + deltaHit))
+        {
+            //noteDataList.Remove(noteData);
+            noteData.onNoteDestroy?.Invoke(this,EventArgs.Empty);
+            hitInARow++;
+            score+=hitInARow;
+            print($"Player hit {index}");
+            index++;
+        }
+        else
+        {
+            print("No notes found");
+            hitInARow = 0;
+        }
     }
 }

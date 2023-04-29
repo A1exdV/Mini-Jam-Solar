@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: abb97e85f4d03f046bcebf3792e38cd0, type: 3}
   midiFileLocation: Test.mid
+  spawnTimeAdvance: 1
   noteNameUp: 11
   noteNameLeft: 10
   noteNameRight: 9

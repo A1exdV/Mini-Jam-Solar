@@ -12,7 +12,7 @@ public class LevelDataHolder : MonoBehaviour
 {
     public static LevelDataHolder Instance { get; private set; }
 
-    private const string MAIN_GAME_SCENE = "MainGame";
+    private const string MAIN_GAME_SCENE = "Game";
 
     public EventHandler OnLevelDataLoading;
 

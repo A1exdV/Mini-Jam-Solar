@@ -6,6 +6,8 @@ public class LevelDataSO: ScriptableObject
 {
     public AudioClip audioClip;
     public string midiFileLocation;
+
+    public float spawnTimeAdvance;
     
     public NoteName noteNameUp;
     public NoteName noteNameLeft;
