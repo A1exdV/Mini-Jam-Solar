@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 31f3c205c8a27f846ab0a46bb9fbcef2, type: 3}
-  midiFileLocation: MIDI map/Beat Only as Midi.mid
+  midiFileLocation: Beat Only as Midi.mid
   noteNameUp: 0
   noteNameLeft: 1
   noteNameRight: 2

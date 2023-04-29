@@ -5,10 +5,8 @@ using System.IO;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class LevelDataHolder : MonoBehaviour
 {
@@ -22,6 +20,7 @@ public class LevelDataHolder : MonoBehaviour
     private MidiFile _midiFile;
     private Note[] _notesArray;
     private List<double> _timeStamps;
+    private UnityWebRequest _www;
 
     private void Awake()
     {
@@ -34,21 +33,19 @@ public class LevelDataHolder : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        _www = new UnityWebRequest();
     }
 
     public void LoadNewLevelData(LevelDataSO levelDataSO)
     {
         SetDataFromSO(levelDataSO);
         GetMidiFromPath();
-        GetDataFromMidi();
-        SetTimeStamps();
     }
-    
-    
+
+
     private void SetDataFromSO(LevelDataSO levelDataSO)
     {
-        SceneManager.LoadScene(MAIN_GAME_SCENE);
-
         _levelDataSo = levelDataSO;
         _midiFile = null;
     }
@@ -57,8 +54,8 @@ public class LevelDataHolder : MonoBehaviour
     {
         if (_levelDataSo == null)
             throw new ArgumentNullException(_levelDataSo.midiFileLocation);
-        
-        if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
+        if (Application.streamingAssetsPath.StartsWith("http://") ||
+            Application.streamingAssetsPath.StartsWith("https://"))
         {
             StartCoroutine(ReadFromWebsite());
         }
@@ -70,29 +67,39 @@ public class LevelDataHolder : MonoBehaviour
 
     private IEnumerator ReadFromWebsite()
     {
-        using (UnityWebRequest www = UnityWebRequest.Get(Application.streamingAssetsPath + "/" + _levelDataSo.midiFileLocation))
+        var path = Path.Combine(Application.streamingAssetsPath, _levelDataSo.midiFileLocation);
+        var success = false;
+        while (!success)
         {
-            yield return www.SendWebRequest();
+            using (_www = UnityWebRequest.Get(path))
+            {
+                yield return _www.SendWebRequest();
 
-            if (www.result is UnityWebRequest.Result.ConnectionError or UnityWebRequest.Result.ProtocolError or UnityWebRequest.Result.DataProcessingError)
-            {
-                Debug.LogError(www.error);
-            }
-            else
-            {
-                byte[] results = www.downloadHandler.data;
-                using (var stream = new MemoryStream(results))
+                if (_www.result != UnityWebRequest.Result.Success)
                 {
-                    _midiFile = MidiFile.Read(stream);
+                    Debug.LogError(_www.error);
+                }
+                else
+                {
+                    byte[] results = _www.downloadHandler.data;
+                    using (var stream = new MemoryStream(results))
+                    {
+                        _midiFile = MidiFile.Read(stream);
+                        success = true;
+                        
+                    }
                 }
             }
         }
+        GetDataFromMidi();
     }
+
     private void ReadFromFile()
     {
         _midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + _levelDataSo.midiFileLocation);
+        GetDataFromMidi();
     }
-    
+
     private void SetTimeStamps()
     {
         _timeStamps = new List<double>();
@@ -101,13 +108,16 @@ public class LevelDataHolder : MonoBehaviour
             var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, _midiFile.GetTempoMap());
             _timeStamps.Add((double)metricTimeSpan.TotalMicroseconds / 1000000f);
         }
+        SceneManager.LoadScene(MAIN_GAME_SCENE);
     }
-    
+
     private void GetDataFromMidi()
     {
         var notes = _midiFile.GetNotes();
         _notesArray = new Note[notes.Count];
         notes.CopyTo(_notesArray, 0);
+
+        SetTimeStamps();
     }
 
     public LevelDataSO GetLevelDataSO()

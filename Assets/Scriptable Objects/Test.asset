@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: abb97e85f4d03f046bcebf3792e38cd0, type: 3}
-  midiFileLocation: MIDI map/Test.mid
+  midiFileLocation: Test.mid
   noteNameUp: 11
   noteNameLeft: 10
   noteNameRight: 9
