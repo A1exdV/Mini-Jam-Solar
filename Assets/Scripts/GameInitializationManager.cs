@@ -1,14 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using DG.Tweening;
-using Melanchall.DryWetMidi.Interaction;
-using Melanchall.DryWetMidi.MusicTheory;
 using UnityEngine;
-using Note = Melanchall.DryWetMidi.Interaction.Note;
+using UnityEngine.SceneManagement;
+
 
 public class GameInitializationManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource musicSource;
     
+    private LevelDataSO _levelDataSo;
+    
+    private void Start()
+    {
+        _levelDataSo = LevelDataHolder.Instance.GetLevelDataSO();
+        
+         NoteGameManager.Instance.Initialization(musicSource,_levelDataSo.spawnTimeAdvance);
+         
+        SceneManager.LoadScene((int)LevelDataHolder.Instance.GetLevelDataSO().sceneLocation, LoadSceneMode.Additive);
+        
+        musicSource.clip = _levelDataSo.audioClip;
+        musicSource.Play();
+    }
 }

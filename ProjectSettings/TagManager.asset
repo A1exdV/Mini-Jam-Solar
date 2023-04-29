@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 1358708297
+    locked: 0
+  - name: Shaman
+    uniqueID: 2178731437
+    locked: 0
+  - name: ShamanHead
+    uniqueID: 681628351
+    locked: 0

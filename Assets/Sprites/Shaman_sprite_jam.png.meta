@@ -1,0 +1,1105 @@
+fileFormatVersion: 2
+guid: 1ea5bc5548d0d7a498c5a4421e0e71f6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 2265
+        width: 480
+        height: 527
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cd01b374b13ed4ca6cc3bacceb092d
+      internalID: 1701260087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_1
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 2355
+        width: 259
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c43925c703176418652ce9928deb9d
+      internalID: 292116691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_2
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 2278
+        width: 142
+        height: 378
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b396e936866e04188566cd29e7c477
+      internalID: -205716466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_3
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 2575
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fef41a4be376354994d031b353ce63b
+      internalID: -276337417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_5
+      rect:
+        serializedVersion: 2
+        x: 2459
+        y: 2301
+        width: 161
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d421841346b55e459a505017dd95e15
+      internalID: -917367160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_6
+      rect:
+        serializedVersion: 2
+        x: 2762
+        y: 2310
+        width: 189
+        height: 355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47aed18baeb07e6469f4649a97015063
+      internalID: -619616807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_7
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 1819
+        width: 496
+        height: 895
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9787b64c9410d604e94e16352b66cbe2
+      internalID: 1941375048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_8
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 2306
+        width: 261
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca54781b4847eca47987c4f9fb499cb5
+      internalID: 1828971324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_9
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1710
+        width: 480
+        height: 526
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5afd976f42c931243bf23510afa83f91
+      internalID: -1919008912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_10
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 1873
+        width: 287
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2513ea96ca7317e4c95b2394ccb06955
+      internalID: 52012518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_11
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 1865
+        width: 283
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4af91046f75c8140a572b6690e4a967
+      internalID: 1389797140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_12
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 1696
+        width: 490
+        height: 402
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3228f0f36a57a9478866cd7a8d17732
+      internalID: 1861314533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_13
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 1755
+        width: 490
+        height: 403
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5813ae1db77d745abbcefd262fcef0
+      internalID: 1443558550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_15
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1114
+        width: 478
+        height: 526
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0ad1861e3c92349aca33349985526b
+      internalID: -1324661698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_16
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 1280
+        width: 127
+        height: 157
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb78bb5f56fcca54994ed108ba5e9b9c
+      internalID: 1551414263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_17
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 1280
+        width: 129
+        height: 151
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf59cbd12b4f81b448eec9ab857a8849
+      internalID: -142011102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_18
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 1284
+        width: 125
+        height: 157
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4803b51d523869e45ac96ecaf64a5b02
+      internalID: -908011145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_19
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 1284
+        width: 130
+        height: 153
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e98c08a502ada2468454dff6dfe607e
+      internalID: -1964349017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_20
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 1237
+        width: 90
+        height: 224
+      alignment: 9
+      pivot: {x: 0.5, y: 0.95}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63598464bff0fd345bfc5c1d76543d65
+      internalID: 1911319875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_21
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 1244
+        width: 125
+        height: 231
+      alignment: 9
+      pivot: {x: 0.55, y: 0.95}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e0b7e7f5eb88a4893018dbc82cd370
+      internalID: -826818524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_22
+      rect:
+        serializedVersion: 2
+        x: 2501
+        y: 1237
+        width: 90
+        height: 224
+      alignment: 9
+      pivot: {x: 0.5, y: 0.95}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fd58f48fc155c4d9a309743fc8364f
+      internalID: -2049913379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_23
+      rect:
+        serializedVersion: 2
+        x: 2786
+        y: 1244
+        width: 125
+        height: 231
+      alignment: 9
+      pivot: {x: 0.55, y: 0.95}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e5bf41944676e43a353e8b9d71e24b
+      internalID: -1486213928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_24
+      rect:
+        serializedVersion: 2
+        x: 3325
+        y: 1151
+        width: 289
+        height: 422
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d01b9082334af2f4f9b2d9bfdf92f7b6
+      internalID: -181260780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_26
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 465
+        width: 480
+        height: 526
+      alignment: 9
+      pivot: {x: 0.5, y: 0.095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091e38e28de259a4ea22d521147ace31
+      internalID: -1988844081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_27
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 769
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ec99e35f2bd4c4da8327d806745c22
+      internalID: -807527949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_28
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 764
+        width: 66
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04ae20e00fecd24f873cd8c39f35cee
+      internalID: -1618498097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_30
+      rect:
+        serializedVersion: 2
+        x: 2001
+        y: 781
+        width: 43
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7831f9b6390ba594fa26a5e40c8d48f9
+      internalID: 1546212763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_31
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 777
+        width: 53
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b62dd29ee90bb4db8349a4082071fb
+      internalID: 1080024618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_32
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 747
+        width: 250
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb07d4c5f8b777741a2dd4951a594579
+      internalID: 1819047685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_33
+      rect:
+        serializedVersion: 2
+        x: 2803
+        y: 558
+        width: 175
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dcc3f6cf0d2dc2458b6d8e8397e2c63
+      internalID: 708851597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_34
+      rect:
+        serializedVersion: 2
+        x: 3181
+        y: 99
+        width: 546
+        height: 968
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496b8337d57ea7a419632734db919c15
+      internalID: 985526457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_4
+      rect:
+        serializedVersion: 2
+        x: 2201
+        y: 2286
+        width: 180
+        height: 370
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92dabc3b2bf1cc43bb18029c83af08b
+      internalID: 290348195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_35
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 745
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742a3f536fc26d1459302103ddae525a
+      internalID: 35922353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_36
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 741
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a554b01884aaaf94c9ff491de962cb5d
+      internalID: -896718424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_37
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 644
+        width: 155
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49baba8fb960fad4bbef848860d1f1a6
+      internalID: 1974699406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_38
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 614
+        width: 168
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6da8e7e13ef404bacf36d6edb723f6
+      internalID: -1550498729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_39
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 628
+        width: 166
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ca284c10c7b63478d44272ea782c7e
+      internalID: 1839358682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_40
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 178
+        width: 140
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daea8fcee03ebc74fab1531940f7bada
+      internalID: 1218709536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_41
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 385
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b44307f5d24704cbb0af0a9e1b1443
+      internalID: -1224918585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_42
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 259
+        width: 152
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55754789eacc7e4199e68f3c82b4b9f
+      internalID: 1519724591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_43
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 204
+        width: 161
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4906cef704c60a1499a82e5d7c492c66
+      internalID: 1529646030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_44
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 259
+        width: 166
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db20864f384f08f45b9c8d9f3c3f19d1
+      internalID: -727289736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_45
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 240
+        width: 208
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850a3e670211b6f4ebcce362f340d061
+      internalID: -2088836047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shaman_sprite_jam_46
+      rect:
+        serializedVersion: 2
+        x: 2676
+        y: 108
+        width: 189
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0882995a046a59045a759febac6ced84
+      internalID: 1316899947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shaman_sprite_jam_39: 1839358682
+      Shaman_sprite_jam_26: -1988844081
+      Shaman_sprite_jam_5: -917367160
+      Shaman_sprite_jam_9: -1919008912
+      Shaman_sprite_jam_4: 290348195
+      Shaman_sprite_jam_40: 1218709536
+      Shaman_sprite_jam_10: 52012518
+      Shaman_sprite_jam_13: 1443558550
+      Shaman_sprite_jam_38: -1550498729
+      Shaman_sprite_jam_45: -2088836047
+      Shaman_sprite_jam_32: 1819047685
+      Shaman_sprite_jam_34: 985526457
+      Shaman_sprite_jam_11: 1389797140
+      Shaman_sprite_jam_16: 1551414263
+      Shaman_sprite_jam_42: 1519724591
+      Shaman_sprite_jam_25: 1789347311
+      Shaman_sprite_jam_43: 1529646030
+      Shaman_sprite_jam_28: -1618498097
+      Shaman_sprite_jam_19: -1964349017
+      Shaman_sprite_jam_29: 806854041
+      Shaman_sprite_jam_23: -1486213928
+      Shaman_sprite_jam_24: -181260780
+      Shaman_sprite_jam_27: -807527949
+      Shaman_sprite_jam_6: -619616807
+      Shaman_sprite_jam_46: 1316899947
+      Shaman_sprite_jam_37: 1974699406
+      Shaman_sprite_jam_31: 1080024618
+      Shaman_sprite_jam_41: -1224918585
+      Shaman_sprite_jam_22: -2049913379
+      Shaman_sprite_jam_2: -205716466
+      Shaman_sprite_jam_33: 708851597
+      Shaman_sprite_jam_1: 292116691
+      Shaman_sprite_jam_14: -492017974
+      Shaman_sprite_jam_36: -896718424
+      Shaman_sprite_jam_12: 1861314533
+      Shaman_sprite_jam_20: 1911319875
+      Shaman_sprite_jam_18: -908011145
+      Shaman_sprite_jam_17: -142011102
+      Shaman_sprite_jam_21: -826818524
+      Shaman_sprite_jam_44: -727289736
+      Shaman_sprite_jam_15: -1324661698
+      Shaman_sprite_jam_7: 1941375048
+      Shaman_sprite_jam_35: 35922353
+      Shaman_sprite_jam_3: -276337417
+      Shaman_sprite_jam_30: 1546212763
+      Shaman_sprite_jam_0: 1701260087
+      Shaman_sprite_jam_8: 1828971324
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,16 +3,20 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Visual
 {
     public class NoteVisual : MonoBehaviour
     {
-        private NoteGameManager.NoteData _noteData;
+        private NoteData _noteData;
         private Image _image;
 
-        private float _endAngle = 98f;
-        public void SetNoteData(NoteGameManager.NoteData noteData)
+        private float _maxAngle = 89f;
+
+        private float _startAngle;
+        private float _endAngle;
+        public void SetNoteData(NoteData noteData)
         {
             _noteData = noteData;
         }
@@ -24,6 +28,18 @@ namespace Visual
             _image.color = new Color(1,1,1,0);
             _noteData.onNoteDestroy+= OnNoteDestroy;
             gameObject.SetActive(false);
+            
+            if (Random.Range(0, 2) == 1)
+            {
+                _startAngle = _maxAngle;
+                _endAngle = -_maxAngle;
+            }
+            else
+            {
+                _startAngle = -_maxAngle;
+                _endAngle = _maxAngle;
+            }
+            
         }
 
         private void OnNoteDestroy(object sender, EventArgs e)
@@ -39,15 +55,7 @@ namespace Visual
             gameObject.SetActive(true);
             var time = (float)e;
             print(time);
-            transform.localEulerAngles = new Vector3(0, 0, -89f);
-            /*var sequence = DOTween.Sequence();
-            sequence.Append(transform.DOLocalRotate(new Vector3(0,0,89f), time, RotateMode.LocalAxisAdd));
-            sequence.Append(transform.DOLocalRotate(new Vector3(0,0,89f), time, RotateMode.LocalAxisAdd));
-            sequence.Play();
-            sequence.OnComplete(() =>
-            {
-                print("Done!");
-            });*/
+            transform.localEulerAngles = new Vector3(0, 0, _startAngle);
             StartCoroutine(Rotation(time));
             _image.DOFade(1, time/2);
         }
@@ -58,7 +66,7 @@ namespace Visual
             while (transform.localEulerAngles.y != _endAngle)
             {
                 timer += Time.deltaTime;
-                var currentAngle = Mathf.LerpAngle(-89f, 89,timer/(time*2));
+                var currentAngle = Mathf.LerpAngle(_startAngle, _endAngle,timer/(time*2));
                 transform.localEulerAngles = new Vector3(0, 0, currentAngle);
                 yield return null;
             }
