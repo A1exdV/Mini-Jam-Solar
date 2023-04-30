@@ -12,7 +12,7 @@ public class GameInitializationManager : MonoBehaviour
     {
         _levelDataSo = LevelDataHolder.Instance.GetLevelDataSO();
         
-         NoteGameManager.Instance.Initialization(musicSource,_levelDataSo.spawnTimeAdvance);
+         NoteGameManager.Instance.Initialization(musicSource);
          
         SceneManager.LoadScene((int)LevelDataHolder.Instance.GetLevelDataSO().sceneLocation, LoadSceneMode.Additive);
         

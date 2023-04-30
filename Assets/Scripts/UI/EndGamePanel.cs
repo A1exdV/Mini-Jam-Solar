@@ -19,7 +19,7 @@ public class EndGamePanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI greatHitsText;
     [SerializeField] private TextMeshProUGUI niceHitsText;
 
-    private void Awake()
+    private void Start()
     {
         NoteGameManager.Instance.onGameEnd+= OnGameEnd;
     }

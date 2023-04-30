@@ -10,22 +10,41 @@ public class NoteGameManager : MonoBehaviour
 {
     public static NoteGameManager Instance { get; private set; }
 
-    [SerializeField] private GameObject notePrefab;
-    [SerializeField] private float delayNiceHit = 0.15f;
+    [Header("Prefabs")] [SerializeField] private GameObject notePrefab;
+
+    [Header("Delays")] [SerializeField] private float delayNiceHit = 0.15f;
     [SerializeField] private float delayGreatHit = 0.15f;
     [SerializeField] private float delayPerfectHit = 0.05f;
 
-    [SerializeField] private int scoreByNiceHit = 3;
+    [Header("Score")] [SerializeField] private int scoreByNiceHit = 3;
     [SerializeField] private int scoreByGreatHit = 6;
     [SerializeField] private int scoreByPerfectHit = 10;
-    
-    
-    [SerializeField] private NoteName noteNameUp;
+
+    private int _score;
+    private int _multiplier;
+
+    [Header("Health and clouds")] 
+    [SerializeField] private float firstCloudTrigger = 0.5f;
+    [SerializeField] private float secondCloudTrigger = 0.25f;
+    [SerializeField] private float thirdCloudTrigger = 0f;
+
+    [Space] [SerializeField] private int firstCloudDamage = 2;
+    [SerializeField] private int secondCloudDamage = 3;
+
+    private int _maxHealth;
+    private int _health;
+    private int _damage = 1;
+
+    [Header("Note names")] [SerializeField]
+    private NoteName noteNameUp;
+
     [SerializeField] private NoteName noteNameLeft;
     [SerializeField] private NoteName noteNameRight;
     [SerializeField] private NoteName noteNameDown;
 
-    [SerializeField] private RectTransform noteSpawnPointUp;
+    [Header("Note Spawn points")] [SerializeField]
+    private RectTransform noteSpawnPointUp;
+
     [SerializeField] private RectTransform noteSpawnPointLeft;
     [SerializeField] private RectTransform noteSpawnPointRight;
     [SerializeField] private RectTransform noteSpawnPointDown;
@@ -50,13 +69,12 @@ public class NoteGameManager : MonoBehaviour
     private List<NoteData> _noteDataListRight;
     private List<NoteData> _noteDataListDown;
 
-    private int _score;
-    private int _multiplier;
-
     public EventHandler<GameInfo> onPlayerMiss;
     public EventHandler<GameInfo> onPlayerHit;
 
     public EventHandler<Statistics> onGameEnd;
+
+    public EventHandler<float> onHealthChanged;
 
     private Statistics _statistics;
 
@@ -79,9 +97,12 @@ public class NoteGameManager : MonoBehaviour
         }
     }
 
-    public void Initialization(AudioSource audioSource, float spawnTimeAdvance)
+    public void Initialization(AudioSource audioSource)
     {
-        _spawnTimeAdvance = spawnTimeAdvance;
+        var levelData = LevelDataHolder.Instance.GetLevelDataSO();
+        _spawnTimeAdvance = levelData.spawnTimeAdvance;
+        _maxHealth = levelData.maxHealth;
+        _health = _maxHealth;
         _musicSource = audioSource;
         _visibleIndex = 0;
         _score = 0;
@@ -127,12 +148,39 @@ public class NoteGameManager : MonoBehaviour
 
     private void Update()
     {
-        if(_isGameEnded)
+        if (_isGameEnded)
             return;
-        
+
         CheckForVisibleNotes();
         CheckForMiss();
+        CheckHealth();
         CheckForEnd();
+    }
+
+    private void CheckHealth()
+    {
+        if (_damage == 1 && HealthNormalized() <= firstCloudTrigger)
+        {
+            print("Cloud Triggered");
+            _health = _maxHealth;
+            _damage = firstCloudDamage;
+            onHealthChanged?.Invoke(this,HealthNormalized());
+            return;
+        }
+        if (_damage == 2 && HealthNormalized() <= secondCloudTrigger)
+        {
+            print("Cloud Triggered");
+            _health = _maxHealth;
+            _damage = secondCloudDamage;
+            onHealthChanged?.Invoke(this,HealthNormalized());
+            return;
+        }
+        if (_damage == 3 && HealthNormalized() <= thirdCloudTrigger)
+        {
+            print("Cloud Triggered");
+            _isGameEnded = true;
+            onGameEnd?.Invoke(this, _statistics);
+        }
     }
 
     private void CheckForEnd()
@@ -141,7 +189,7 @@ public class NoteGameManager : MonoBehaviour
         {
             _statistics.isWin = true;
             _isGameEnded = true;
-            onGameEnd?.Invoke(this,_statistics);
+            onGameEnd?.Invoke(this, _statistics);
         }
     }
 
@@ -168,6 +216,7 @@ public class NoteGameManager : MonoBehaviour
             _hitIndexUp++;
             _statistics.totalNotesMissed++;
             _multiplier = 0;
+            _health -= _damage;
             isMissed = true;
         }
 
@@ -180,6 +229,7 @@ public class NoteGameManager : MonoBehaviour
             _hitIndexLeft++;
             _statistics.totalNotesMissed++;
             _multiplier = 0;
+            _health -= _damage;
             isMissed = true;
         }
 
@@ -192,6 +242,7 @@ public class NoteGameManager : MonoBehaviour
             _hitIndexRight++;
             _statistics.totalNotesMissed++;
             _multiplier = 0;
+            _health -= _damage;
             isMissed = true;
         }
 
@@ -204,12 +255,14 @@ public class NoteGameManager : MonoBehaviour
             _hitIndexDown++;
             _statistics.totalNotesMissed++;
             _multiplier = 0;
+            _health -= _damage;
             isMissed = true;
         }
 
         if (isMissed)
         {
             onPlayerMiss?.Invoke(this, GetGameInfo());
+            onHealthChanged?.Invoke(this,HealthNormalized());
         }
     }
 
@@ -219,14 +272,13 @@ public class NoteGameManager : MonoBehaviour
         {
             score = _score,
             multiplier = _multiplier,
-            healthNormalized = 0
         };
     }
 
     private void InstantiateAllNotes()
     {
         _statistics.totalNotes = _notesArray.Length;
-        
+
         for (var index = 0; index < _notesArray.Length; index++)
         {
             var note = _notesArray[index];
@@ -291,41 +343,53 @@ public class NoteGameManager : MonoBehaviour
             noteData.onNoteDestroy?.Invoke(this, EventArgs.Empty);
             _multiplier++;
             _destroyedIndex++;
-            
+
             _statistics.totalNotesHit++;
 
             if (GetMusicSourceTime() >= noteData.TimeStamp - delayPerfectHit &&
                 GetMusicSourceTime() <= noteData.TimeStamp + delayPerfectHit)
             {
                 _statistics.totalPerfectHits++;
-                _score += _multiplier* scoreByPerfectHit;
+                _score += _multiplier * scoreByPerfectHit;
                 print("Perfect!");
             }
-            else if(GetMusicSourceTime() >= noteData.TimeStamp - delayGreatHit &&
-                    GetMusicSourceTime() <= noteData.TimeStamp + delayGreatHit)
+            else if (GetMusicSourceTime() >= noteData.TimeStamp - delayGreatHit &&
+                     GetMusicSourceTime() <= noteData.TimeStamp + delayGreatHit)
             {
                 _statistics.totalGreatHits++;
-                _score += _multiplier* scoreByGreatHit;
+                _score += _multiplier * scoreByGreatHit;
                 print("Great!");
             }
             else
             {
                 _statistics.totalNiceHits++;
-                _score += _multiplier* scoreByNiceHit;
+                _score += _multiplier * scoreByNiceHit;
                 print("Nice!");
             }
-            
-            if(_multiplier>_statistics.maxMultiplier)
+
+            if (_multiplier > _statistics.maxMultiplier)
                 _statistics.maxMultiplier = _multiplier;
-            
+
             index++;
+            
+            if(_health<_maxHealth)
+                _health++;
+            
             onPlayerHit?.Invoke(this, GetGameInfo());
+            onHealthChanged?.Invoke(this,HealthNormalized());
         }
         else
         {
             print("No notes found");
             onPlayerMiss?.Invoke(this, GetGameInfo());
+            _health -= _damage;
+            onHealthChanged?.Invoke(this,HealthNormalized());
             _multiplier = 0;
         }
+    }
+
+    private float HealthNormalized()
+    {
+        return ((float)_health / _maxHealth);
     }
 }

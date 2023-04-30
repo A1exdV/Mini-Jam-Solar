@@ -116,27 +116,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Interface_jam_0
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 5124
-        width: 2588
-        height: 834
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74f3791dbee21af4783de811dbb51b5a
-      internalID: 236942454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Interface_jam_1
       rect:
         serializedVersion: 2
@@ -242,27 +221,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Interface_jam_6
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 4114
-        width: 2593
-        height: 833
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 245f7c4ad812ceb4cbe2d05408407ec4
-      internalID: -475469077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Interface_jam_7
       rect:
         serializedVersion: 2
@@ -300,27 +258,6 @@ TextureImporter:
       bones: []
       spriteID: 94eec0f05672c3942b01091d62a333ff
       internalID: -1152897764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Interface_jam_9
-      rect:
-        serializedVersion: 2
-        x: 6909
-        y: 2859
-        width: 1114
-        height: 1242
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b041f2c65b1be545ac37dc136fdd40e
-      internalID: 1820149482
       vertices: []
       indices: 
       edges: []
@@ -371,10 +308,10 @@ TextureImporter:
       name: Interface_jam_12
       rect:
         serializedVersion: 2
-        x: 7067
-        y: 1477
-        width: 956
-        height: 1169
+        x: 7640
+        y: 2859
+        width: 1114
+        height: 1242
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -455,10 +392,10 @@ TextureImporter:
       name: Interface_jam_16
       rect:
         serializedVersion: 2
-        x: 6964
-        y: 234
-        width: 949
-        height: 1145
+        x: 7794
+        y: 1477
+        width: 954
+        height: 1169
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -514,6 +451,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Interface_jam_17
+      rect:
+        serializedVersion: 2
+        x: 7695
+        y: 234
+        width: 943
+        height: 1145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f835457b9ec3174da473f5694bab70a
+      internalID: 1235550893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interface_jam_23
+      rect:
+        serializedVersion: 2
+        x: 4631
+        y: 119
+        width: 956
+        height: 940
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6674be944e77706418d0ca83f65e46ae
+      internalID: 579243272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -530,9 +509,12 @@ TextureImporter:
       Interface_jam_1: 1005799998
       Interface_jam_9: 1820149482
       Interface_jam_7: 721408203
+      Interface_jam_23: 579243272
       Interface_jam_10: -2112428310
       Interface_jam_19: 163237220
       Interface_jam_6: -475469077
+      Interface_jam_22: 292661944
+      Interface_jam_24: -333600451
       Interface_jam_21: -965465318
       Interface_jam_4: 1996620479
       Interface_jam_3: 1285823947

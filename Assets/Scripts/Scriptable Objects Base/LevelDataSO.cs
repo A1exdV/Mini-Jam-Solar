@@ -1,6 +1,4 @@
-﻿using Melanchall.DryWetMidi.MusicTheory;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewLevelData",menuName = "Scriptable Object/new level data")]
 public class LevelDataSO: ScriptableObject
@@ -11,5 +9,7 @@ public class LevelDataSO: ScriptableObject
     public SceneEnum sceneLocation;
     
     public float spawnTimeAdvance;
-    
+
+    public int maxHealth = 10;
+
 }

@@ -24,6 +24,7 @@ namespace Visual
         private void Start()
         {
             _noteData.onNoteMakeVisible += OnNoteMakeVisible;
+            NoteGameManager.Instance.onGameEnd += OnGameEnd;
             _image = GetComponentInChildren<Image>();
             _image.color = new Color(1,1,1,0);
             _noteData.onNoteDestroy+= OnNoteDestroy;
@@ -42,10 +43,19 @@ namespace Visual
             
         }
 
+        private void OnGameEnd(object sender, Statistics e)
+        {
+            DOTween.Kill(transform);
+            DOTween.Kill(_image);
+            StopAllCoroutines();
+        }
+
         private void OnNoteDestroy(object sender, EventArgs e)
         {
             DOTween.Kill(transform);
             DOTween.Kill(_image);
+            _noteData.onNoteMakeVisible -= OnNoteMakeVisible;
+            NoteGameManager.Instance.onGameEnd -= OnGameEnd;
             Destroy(gameObject);
             
         }
