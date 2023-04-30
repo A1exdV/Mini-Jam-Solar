@@ -224,13 +224,13 @@ TextureImporter:
       name: Interface_jam_7
       rect:
         serializedVersion: 2
-        x: 2957
+        x: 2952
         y: 4108
         width: 900
         height: 822
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 150, y: 150, z: 150, w: 150}
+      border: {x: 388, y: 351, z: 385, w: 350}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -251,7 +251,7 @@ TextureImporter:
         height: 834
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 150, y: 150, z: 150, w: 150}
+      border: {x: 1175, y: 358, z: 1171, w: 359}
       outline: []
       physicsShape: []
       tessellationDetail: 0

@@ -24,7 +24,7 @@ namespace Visual
         private void Start()
         {
             _noteData.onNoteMakeVisible += OnNoteMakeVisible;
-            NoteGameManager.Instance.onGameEnd += OnGameEnd;
+            GameStateManager.onGameEndedState += OnGameEnd;
             _image = GetComponentInChildren<Image>();
             _image.color = new Color(1,1,1,0);
             _noteData.onNoteDestroy+= OnNoteDestroy;
@@ -43,7 +43,7 @@ namespace Visual
             
         }
 
-        private void OnGameEnd(object sender, Statistics e)
+        private void OnGameEnd(object sender, EventArgs e)
         {
             DOTween.Kill(transform);
             DOTween.Kill(_image);
@@ -55,7 +55,7 @@ namespace Visual
             DOTween.Kill(transform);
             DOTween.Kill(_image);
             _noteData.onNoteMakeVisible -= OnNoteMakeVisible;
-            NoteGameManager.Instance.onGameEnd -= OnGameEnd;
+            GameStateManager.onGameEndedState -= OnGameEnd;
             Destroy(gameObject);
             
         }
@@ -64,7 +64,6 @@ namespace Visual
         {
             gameObject.SetActive(true);
             var time = (float)e;
-            print(time);
             transform.localEulerAngles = new Vector3(0, 0, _startAngle);
             StartCoroutine(Rotation(time));
             _image.DOFade(1, time/2);

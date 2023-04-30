@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Enums;
 using Melanchall.DryWetMidi.MusicTheory;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -71,8 +72,7 @@ public class NoteGameManager : MonoBehaviour
 
     public EventHandler<GameInfo> onPlayerMiss;
     public EventHandler<GameInfo> onPlayerHit;
-
-    public EventHandler<Statistics> onGameEnd;
+    public EventHandler onCloudTriggered;
 
     public EventHandler<float> onHealthChanged;
 
@@ -148,7 +148,7 @@ public class NoteGameManager : MonoBehaviour
 
     private void Update()
     {
-        if (_isGameEnded)
+        if (GameStateManager.GetState() != GameState.Playing)
             return;
 
         CheckForVisibleNotes();
@@ -165,6 +165,7 @@ public class NoteGameManager : MonoBehaviour
             _health = _maxHealth;
             _damage = firstCloudDamage;
             onHealthChanged?.Invoke(this,HealthNormalized());
+            onCloudTriggered?.Invoke(this, EventArgs.Empty);
             return;
         }
         if (_damage == 2 && HealthNormalized() <= secondCloudTrigger)
@@ -173,13 +174,15 @@ public class NoteGameManager : MonoBehaviour
             _health = _maxHealth;
             _damage = secondCloudDamage;
             onHealthChanged?.Invoke(this,HealthNormalized());
+            onCloudTriggered?.Invoke(this, EventArgs.Empty);
             return;
         }
         if (_damage == 3 && HealthNormalized() <= thirdCloudTrigger)
         {
             print("Cloud Triggered");
             _isGameEnded = true;
-            onGameEnd?.Invoke(this, _statistics);
+            onCloudTriggered?.Invoke(this, EventArgs.Empty);
+            GameStateManager.OnChangeState?.Invoke(this, GameState.GameEnded);
         }
     }
 
@@ -189,7 +192,7 @@ public class NoteGameManager : MonoBehaviour
         {
             _statistics.isWin = true;
             _isGameEnded = true;
-            onGameEnd?.Invoke(this, _statistics);
+            GameStateManager.OnChangeState?.Invoke(this, GameState.GameEnded);
         }
     }
 
@@ -266,6 +269,11 @@ public class NoteGameManager : MonoBehaviour
         }
     }
 
+    public double GetFirstNoteSpawnAdvanceTime()
+    {
+        return _noteDataList[0].TimeStamp - _spawnTimeAdvance;
+    }
+
     private GameInfo GetGameInfo()
     {
         return new GameInfo
@@ -326,6 +334,11 @@ public class NoteGameManager : MonoBehaviour
     public double GetMusicSourceTime()
     {
         return (double)_musicSource.timeSamples / _musicSource.clip.frequency;
+    }
+
+    public Statistics GetStatistics()
+    {
+        return _statistics;
     }
 
     private void OnInputPerformed(ref int index, List<NoteData> noteDataList)
@@ -391,5 +404,13 @@ public class NoteGameManager : MonoBehaviour
     private float HealthNormalized()
     {
         return ((float)_health / _maxHealth);
+    }
+
+    private void OnDestroy()
+    {
+        InputManager.Instance.OnUpAction -= InputManager_OnUpAction;
+        InputManager.Instance.OnLeftAction -= InputManager_OnLeftAction;
+        InputManager.Instance.OnRightAction -= InputManager_OnRightAction;
+        InputManager.Instance.OnDownAction -= InputManager_OnDownAction;
     }
 }

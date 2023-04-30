@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Enums;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,21 +12,28 @@ namespace Visual
 
         [SerializeField] private Image sunImage;
         
-        [SerializeField] private Image cloudImage1;
-        [SerializeField] private Image cloudImage2;
-        [SerializeField] private Image cloudImage3;
+        [SerializeField] private List<Image> cloudImageList;
+
 
         [SerializeField] private Color dangerColor;
+
+        private int _triggeredClouds;
 
         private void Start()
         {
             healthFill.fillAmount = 1f;
             NoteGameManager.Instance.onHealthChanged+= OnHealthChanged;
+            NoteGameManager.Instance.onCloudTriggered+= OnCloudTriggered;
+        }
+
+        private void OnCloudTriggered(object sender, EventArgs e)
+        {
+            cloudImageList[_triggeredClouds].enabled = false;
+            _triggeredClouds++;
         }
 
         private void OnHealthChanged(object sender, float e)
         {
-            print($"fill - {e}");
             healthFill.fillAmount = e;
         }
     }

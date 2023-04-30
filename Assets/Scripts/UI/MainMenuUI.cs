@@ -19,6 +19,9 @@ namespace UI
         [SerializeField] private GameObject settingsUI;
         [SerializeField] private GameObject creditsUI;
 
+        [Header("UI Groups")] 
+        [SerializeField] private GameObject transitionObject;
+
         private void Awake()
         {
             gameObject.SetActive(true);
@@ -35,6 +38,12 @@ namespace UI
             {
                 button.onClick.AddListener(BackToMainMenuButton_OnClick);
             }
+            transitionObject.GetComponent<TransitionVisual>().RunTransition(new TransitionEventArgs
+            {
+                toVisible = false,
+                transitionTime = 2,
+                needCallback = false
+            });
         }
 
         private void PlayButton_OnClick()

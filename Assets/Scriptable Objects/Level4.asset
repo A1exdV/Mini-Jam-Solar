@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7494f01673149d4aea25754c0efda50, type: 3}
+  m_Name: Level4
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 88972e0573d0b0e4594576853f22f792, type: 3}
+  midiFileLocation: .mid
+  sceneLocation: 3
+  spawnTimeAdvance: 1.5
+  maxHealth: 7
+  nextLevelDataSO: {fileID: 11400000, guid: 20aab11d3547d0040a08a7c70a69ea74, type: 2}

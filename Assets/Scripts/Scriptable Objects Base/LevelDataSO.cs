@@ -12,4 +12,6 @@ public class LevelDataSO: ScriptableObject
 
     public int maxHealth = 10;
 
+    public LevelDataSO nextLevelDataSO;
+
 }

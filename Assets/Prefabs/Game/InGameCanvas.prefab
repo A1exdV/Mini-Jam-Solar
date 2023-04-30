@@ -4016,6 +4016,7 @@ GameObject:
   - component: {fileID: 5877184905125586710}
   - component: {fileID: 5877184905125586711}
   - component: {fileID: 5877184905125586712}
+  - component: {fileID: 4356133401986170567}
   m_Layer: 5
   m_Name: InGameCanvas
   m_TagString: Untagged
@@ -4107,6 +4108,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4356133401986170567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5877184905125586713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638e375a9dc115b45bedc8b2b00b8dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseButton: {fileID: 5877184905010538174}
+  musicButton: {fileID: 5877184904120527844}
+  continueButton: {fileID: 5877184905731842759}
+  mainMenuButton:
+  - {fileID: 5877184903715334300}
+  restartButton:
+  - {fileID: 5877184904637705617}
 --- !u!1 &5877184905311618181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,7 +4381,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 5877184904772555830}
   multiplierText: {fileID: 5877184904776170343}
-  progressFill: {fileID: 5877184904136519081}
 --- !u!1 &5877184905533176063
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,9 +4975,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthFill: {fileID: 5877184904136519081}
   sunImage: {fileID: 842906094222203794}
-  cloudImage1: {fileID: 3852987310452016736}
-  cloudImage2: {fileID: 9081555634864990643}
-  cloudImage3: {fileID: 1070779669756312823}
+  cloudImageList:
+  - {fileID: 3852987310452016736}
+  - {fileID: 9081555634864990643}
+  - {fileID: 1070779669756312823}
   dangerColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!1 &5877184905799312190
 GameObject:

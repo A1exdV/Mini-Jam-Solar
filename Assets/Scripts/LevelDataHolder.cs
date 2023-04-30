@@ -14,8 +14,6 @@ public class LevelDataHolder : MonoBehaviour
 
     private const string MAIN_GAME_SCENE = "Game";
 
-    public EventHandler OnLevelDataLoading;
-
     private LevelDataSO _levelDataSo;
     private MidiFile _midiFile;
     private Note[] _notesArray;

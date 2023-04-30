@@ -1,3 +1,5 @@
+using System;
+using Enums;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,13 +12,33 @@ public class GameInitializationManager : MonoBehaviour
     
     private void Start()
     {
-        _levelDataSo = LevelDataHolder.Instance.GetLevelDataSO();
+        print("starting Initialization");
+        GameStateManager.onPlayingState += OnPlayingState;
+        GameStateManager.onPausedState += OnPausedState;
         
-         NoteGameManager.Instance.Initialization(musicSource);
+        _levelDataSo = LevelDataHolder.Instance.GetLevelDataSO();
+        print("level data set");
+        musicSource.clip = _levelDataSo.audioClip;
+        
          
         SceneManager.LoadScene((int)LevelDataHolder.Instance.GetLevelDataSO().sceneLocation, LoadSceneMode.Additive);
+        print("scene decoration loaded");
         
-        musicSource.clip = _levelDataSo.audioClip;
+        
+        NoteGameManager.Instance.Initialization(musicSource);
+        GameStateManager.OnChangeState.Invoke(this, GameState.Loaded);
+        
+        print("initialization completed");
+    }
+
+    private void OnPausedState(object sender, EventArgs e)
+    {
+        musicSource.Pause();
+    }
+
+    private void OnPlayingState(object sender, EventArgs e)
+    {
         musicSource.Play();
+        print(musicSource.clip.name);
     }
 }

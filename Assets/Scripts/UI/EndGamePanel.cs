@@ -21,17 +21,18 @@ public class EndGamePanel : MonoBehaviour
 
     private void Start()
     {
-        NoteGameManager.Instance.onGameEnd+= OnGameEnd;
+        GameStateManager.onGameEndedState += OnGameEnd;
     }
 
-    private void OnGameEnd(object sender, Statistics e)
+    private void OnGameEnd(object sender, EventArgs e)
     {
-        totalNotesText.text = e.totalNotes.ToString();
-        notesHitText.text = e.totalNotesHit.ToString();
-        notesMissedTest.text =e.totalNotesMissed.ToString();
-        maxMultiplierText.text =e.maxMultiplier.ToString();
-        perfectHitsText.text = e.totalPerfectHits.ToString();
-        greatHitsText.text = e.totalGreatHits.ToString();
-        niceHitsText.text = e.totalNiceHits.ToString();
+        var statistics = NoteGameManager.Instance.GetStatistics();
+        totalNotesText.text = statistics.totalNotes.ToString();
+        notesHitText.text = statistics.totalNotesHit.ToString();
+        notesMissedTest.text =statistics.totalNotesMissed.ToString();
+        maxMultiplierText.text =statistics.maxMultiplier.ToString();
+        perfectHitsText.text = statistics.totalPerfectHits.ToString();
+        greatHitsText.text = statistics.totalGreatHits.ToString();
+        niceHitsText.text = statistics.totalNiceHits.ToString();
     }
 }

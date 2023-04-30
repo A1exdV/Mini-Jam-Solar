@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 87144e57b74cd58418b335a2d7fbac25, type: 3}
   midiFileLocation: Level03.mid
-  sceneLocation: 2
+  sceneLocation: 4
   spawnTimeAdvance: 2
-  noteNameUp: 0
-  noteNameLeft: 1
-  noteNameRight: 2
-  noteNameDown: 3
+  maxHealth: 10
+  nextLevelDataSO: {fileID: 11400000, guid: 82cc8c54087a5904688c7083d323bff9, type: 2}

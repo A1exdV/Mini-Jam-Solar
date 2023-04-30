@@ -50,7 +50,7 @@ namespace Visual
 
         private void Start()
         {
-            NoteGameManager.Instance.onGameEnd += OnGameEnd;
+            GameStateManager.onGameEndedState += OnGameEnd;
             var noAlphaColor = new Color(255, 255, 255, 0);
 
             background.color = noAlphaColor;
@@ -85,14 +85,15 @@ namespace Visual
             gameObject.SetActive(false);
         }
 
-        private void OnGameEnd(object sender, Statistics e)
+        private void OnGameEnd(object sender, EventArgs e)
         {
+            var statistics = NoteGameManager.Instance.GetStatistics();
             gameObject.SetActive(true);
 
             var sequence = DOTween.Sequence();
             sequence.Append(background.DOFade(1, oneElementAnimTime));
 
-            if (e.isWin)
+            if (statistics.isWin)
             {
                 sequence.Append(winText.DOFade(1, oneElementAnimTime));
             }

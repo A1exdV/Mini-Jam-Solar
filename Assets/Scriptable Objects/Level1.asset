@@ -16,7 +16,5 @@ MonoBehaviour:
   midiFileLocation: Level01.mid
   sceneLocation: 2
   spawnTimeAdvance: 2
-  noteNameUp: 0
-  noteNameLeft: 1
-  noteNameRight: 2
-  noteNameDown: 3
+  maxHealth: 10
+  nextLevelDataSO: {fileID: 11400000, guid: e2930a2a4a2f0a84db9fca9f7bab7bbe, type: 2}
