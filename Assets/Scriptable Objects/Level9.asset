@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7494f01673149d4aea25754c0efda50, type: 3}
   m_Name: Level9
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 87144e57b74cd58418b335a2d7fbac25, type: 3}
-  midiFileLocation: .mid
+  index: 8
+  audioClip: {fileID: 8300000, guid: fac88e28f62a09345ada3b86b4067fa2, type: 3}
+  midiFileLocation: 09_MidiVolcano.mid
   sceneLocation: 4
-  spawnTimeAdvance: 1
-  maxHealth: 5
+  spawnTimeAdvance: 2
+  maxHealth: 7
   nextLevelDataSO: {fileID: 0}

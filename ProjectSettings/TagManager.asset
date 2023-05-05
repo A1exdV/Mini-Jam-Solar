@@ -44,9 +44,18 @@ TagManager:
   - name: BackGround
     uniqueID: 1358708297
     locked: 0
+  - name: Clouds
+    uniqueID: 2233952917
+    locked: 0
+  - name: OnTop
+    uniqueID: 1921107159
+    locked: 0
   - name: Shaman
     uniqueID: 2178731437
     locked: 0
   - name: ShamanHead
     uniqueID: 681628351
+    locked: 0
+  - name: rain
+    uniqueID: 3966526437
     locked: 0

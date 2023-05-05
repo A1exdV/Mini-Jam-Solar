@@ -12,12 +12,16 @@ namespace UI
         [SerializeField] private Button settingsButton;
         [SerializeField] private Button creditsButton;
         [SerializeField] private Button exitButton;
+        [SerializeField] private Button logButton;
+        
         [SerializeField] private List<Button> backToMainMenuButtonsList;
 
         [Header("UI holders")] 
         [SerializeField] private GameObject levelSelectionUI;
         [SerializeField] private GameObject settingsUI;
         [SerializeField] private GameObject creditsUI;
+        
+        [SerializeField] private GameObject logUI;
 
         [Header("UI Groups")] 
         [SerializeField] private GameObject transitionObject;
@@ -33,19 +37,26 @@ namespace UI
             settingsButton.onClick.AddListener(SettingsButton_OnClick);
             creditsButton.onClick.AddListener(CreditsButton_OnClick);
             exitButton.onClick.AddListener(ExitButton_OnClick);
-
+            logButton.onClick.AddListener(LogButton_OnCall);
+            
             foreach (var button in backToMainMenuButtonsList)
             {
                 button.onClick.AddListener(BackToMainMenuButton_OnClick);
             }
-            transitionObject.GetComponent<TransitionVisual>().RunTransition(new TransitionEventArgs
+            TransitionVisual.onTransitionRequired?.Invoke(this, new TransitionEventArgs()
             {
                 toVisible = false,
-                transitionTime = 2,
-                needCallback = false
+                transitionTime = 1
             });
         }
 
+
+        private void LogButton_OnCall()
+        {
+            gameObject.SetActive(false);
+            logUI.SetActive(true);
+        }
+        
         private void PlayButton_OnClick()
         {
             gameObject.SetActive(false);

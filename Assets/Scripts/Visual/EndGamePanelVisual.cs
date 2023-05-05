@@ -14,6 +14,9 @@ namespace Visual
 
         [Space] [SerializeField] private TextMeshProUGUI winText;
         [SerializeField] private TextMeshProUGUI loseText;
+        
+        [Space]
+        [SerializeField] private TextMeshProUGUI scoreText;
 
         [Header("Buttons Images")] [SerializeField]
         private Image restartButtonImage;
@@ -78,6 +81,8 @@ namespace Visual
             winText.color = noAlphaColor;
             loseText.color = noAlphaColor;
 
+            scoreText.color = noAlphaColor;
+
             restartButtonImage.color = noAlphaColor;
             mainMenuButtonImage.color = noAlphaColor;
             continueButtonImage.color = noAlphaColor;
@@ -91,16 +96,29 @@ namespace Visual
             gameObject.SetActive(true);
 
             var sequence = DOTween.Sequence();
+            sequence.SetDelay(3f);
             sequence.Append(background.DOFade(1, oneElementAnimTime));
+            
+            sequence.Join(restartButtonImage.DOFade(1, oneElementAnimTime));
+            sequence.Join(mainMenuButtonImage.DOFade(1, oneElementAnimTime));
+           
+
+            sequence.Join(restartButtonText.DOFade(1, oneElementAnimTime));
+            sequence.Join(mainMenuButtonText.DOFade(1, oneElementAnimTime));
 
             if (statistics.isWin)
-            {
+            {             
+                sequence.Join(continueButtonText.DOFade(1, oneElementAnimTime));
+                sequence.Join(continueButtonImage.DOFade(1, oneElementAnimTime));
                 sequence.Append(winText.DOFade(1, oneElementAnimTime));
             }
             else
             {
+                continueButtonImage.gameObject.SetActive(false);
                 sequence.Append(loseText.DOFade(1, oneElementAnimTime));
             }
+            
+            sequence.Append(scoreText.DOFade(1, oneElementAnimTime));
 
             sequence.Append(totalNotesTextOutput.DOFade(1, oneElementAnimTime));
             sequence.Join( totalNotesText.DOFade(1, oneElementAnimTime));
@@ -122,14 +140,6 @@ namespace Visual
 
             sequence.Append(niceHitsText.DOFade(1, oneElementAnimTime));
             sequence.Join(niceHitsTextOutput.DOFade(1, oneElementAnimTime));
-
-            sequence.Append(restartButtonImage.DOFade(1, oneElementAnimTime));
-            sequence.Join(continueButtonImage.DOFade(1, oneElementAnimTime));
-            sequence.Join(mainMenuButtonImage.DOFade(1, oneElementAnimTime));
-
-            sequence.Join(restartButtonText.DOFade(1, oneElementAnimTime));
-            sequence.Join(continueButtonText.DOFade(1, oneElementAnimTime));
-            sequence.Join(mainMenuButtonText.DOFade(1, oneElementAnimTime));
 
             sequence.Play();
         }

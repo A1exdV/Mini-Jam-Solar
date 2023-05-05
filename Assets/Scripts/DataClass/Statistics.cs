@@ -8,4 +8,5 @@ public class Statistics
     public int totalGreatHits = 0;
     public int totalNiceHits = 0;
     public int maxMultiplier = 0;
+    public int score = 0;
 }

@@ -5,10 +5,10 @@ using DG.Tweening;
 using UnityEngine;
 
 public class TransitionEventArgs : EventArgs
-{ 
+{
     public bool toVisible;
     public float transitionTime = 0;
-    public bool needCallback = false;
+    public Action callback = null;
 }
 
 public class TransitionVisual : MonoBehaviour
@@ -18,8 +18,8 @@ public class TransitionVisual : MonoBehaviour
     private bool _isVisible;
 
     public static EventHandler<TransitionEventArgs> onTransitionRequired;
-    
-    
+
+
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
@@ -31,11 +31,15 @@ public class TransitionVisual : MonoBehaviour
     {
         OnTransitionRequired(null, e);
     }
+
     private void OnTransitionRequired(object sender, TransitionEventArgs e)
     {
         print("transition required");
-        if(_isVisible == e.toVisible)
+        if (_isVisible == e.toVisible)
+        {
+            Debug.LogError($"Transition direction error! Sender - {sender}");
             return;
+        }
         if (e.transitionTime != 0)
         {
             transitionTime = e.transitionTime;
@@ -43,7 +47,7 @@ public class TransitionVisual : MonoBehaviour
 
 
         var sequence = DOTween.Sequence();
-        
+
         if (e.toVisible)
         {
             _rectTransform.localPosition = new Vector3(0, -1080, 0);
@@ -59,20 +63,18 @@ public class TransitionVisual : MonoBehaviour
         }
 
         sequence.Play();
-        StartCoroutine(TweenEnded(e.needCallback,sequence));
+        StartCoroutine(TweenEnded(e.callback, sequence));
     }
 
-    private IEnumerator TweenEnded(bool needCallback,Sequence sequence)
+    private IEnumerator TweenEnded(Action callback, Sequence sequence)
     {
         while (sequence.IsActive())
         {
             yield return null;
         }
-
-        if(needCallback)
-            GameStateManager.onTransitionEnd?.Invoke(this,EventArgs.Empty);
+        callback?.Invoke();
         print("transition ended");
-        
+
         yield break;
     }
 

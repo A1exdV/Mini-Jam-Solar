@@ -7,6 +7,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7723301628384029372, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f75999ddba497c84ead07509d308189b, type: 2}
+    - target: {fileID: 7723301628384029372, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029372, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029372, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029372, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8938507598691707364, guid: f75999ddba497c84ead07509d308189b, type: 2}
+    - target: {fileID: 7723301628384029372, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029373, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029373, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029373, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029373, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029373, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029373, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723301628384029373, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -87.82
+      objectReference: {fileID: 0}
     - target: {fileID: 7723301628755109384, guid: 4893c7b8e55dad24f8d43ddff5dd2d89, type: 3}
       propertyPath: m_Name
       value: LevelButton

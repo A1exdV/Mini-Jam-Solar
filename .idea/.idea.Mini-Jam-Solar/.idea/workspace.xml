@@ -6,10 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="e0bc439b-62b3-4997-953b-c956144a91a6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mini-Jam-Solar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mini-Jam-Solar/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Shaman/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Shaman/Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Shaman/Miss.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Shaman/Miss.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Shaman/Visual.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Shaman/Visual.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/TMP/Score Font.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/TMP/Score Font.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/TMP/VerdanaPro-CondBold SDF 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/TMP/VerdanaPro-CondBold SDF 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/TMP/Win Font.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/TMP/Win Font.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/InGameCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/InGameCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainMenu/UI/MainMenuButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainMenu/UI/MainMenuButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainMenu/UI/LevelButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainMenu/UI/LevelButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NotePrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NotePrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SettingsUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SettingsUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Shaman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Shaman.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TransitionUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TransitionUI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BeachLocation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BeachLocation.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ForestLocation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ForestLocation.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
@@ -18,35 +27,53 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Level1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Level1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Level2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Level2.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Level3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Level3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameInfo.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameInitializationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameInitializationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelDataHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelDataHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelSelectionButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelSelectionButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NoteData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NoteData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Level4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Level4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Level5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Level5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Level6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Level6.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Level7.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Level7.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Level8.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Level8.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Level9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Level9.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataClass/NoteData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataClass/NoteData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataClass/Statistics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataClass/Statistics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStateManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/NoteGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NoteGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneEnum.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects Base/LevelDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects Base/LevelDataSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Statistics.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Statistics.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EndGamePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EndGamePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LevelSelectionButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LevelSelectionButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LevelSelectionUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LevelSelectionUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Visual/Countdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Visual/Countdown.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Visual/EndGamePanelVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Visual/EndGamePanelVisual.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Visual/HealthProgressBarVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Visual/HealthProgressBarVisual.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Visual/NoteVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Visual/NoteVisual.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Level01.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Level01.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Level02.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Level02.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Level03.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Level03.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Test.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Test.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Interface_jam.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Interface_jam.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Visual/ShamanVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Visual/ShamanVisual.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Visual/TransitionVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Visual/TransitionVisual.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/01_Beach.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/01_Beach.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/02_Beach.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/02_Beach.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/03_Beach.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/03_Beach.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/04_Forest.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/04_Forest.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/05_Forest.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/05_Forest.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/07_Volcano.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/07_Volcano.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Beach_location_props.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Beach_location_props.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Forest_sprites_jam.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Forest_sprites_jam.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Volcano_sprites_jam.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Volcano_sprites_jam.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Level01.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Level01.mid.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Level02.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Level02.mid.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Level03.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Level03.mid.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Test.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Test.mid.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,12 +85,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MusicManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/EndGamePanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual/CloudsVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual/Countdown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual/HealthProgressBarVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual/InterfaceVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual/ShamanVisual.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual/Thunder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual/TransitionVisual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.4.4/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c6b52566f59b49fc861a7812a1ea2f6b157a00/b5/d299c950/Scene.cs" root0="SKIP_HIGHLIGHTING" />
@@ -144,7 +175,10 @@
       <option name="presentableId" value="Default" />
       <updated>1682763085496</updated>
       <workItem from="1682763090149" duration="35853000" />
-      <workItem from="1682837421470" duration="13580000" />
+      <workItem from="1682837421470" duration="31342000" />
+      <workItem from="1682890534696" duration="13722000" />
+      <workItem from="1682934749734" duration="3119000" />
+      <workItem from="1682954818199" duration="1189000" />
     </task>
     <servers />
   </component>

@@ -82,9 +82,7 @@ public class NoteGameManager : MonoBehaviour
     private int _greatHits;
     private int _niceHits;
 
-    private bool _isGameEnded = false;
-
-
+    private int _levelIndex;
     private void Awake()
     {
         if (!Instance)
@@ -100,6 +98,7 @@ public class NoteGameManager : MonoBehaviour
     public void Initialization(AudioSource audioSource)
     {
         var levelData = LevelDataHolder.Instance.GetLevelDataSO();
+        _levelIndex = levelData.index;
         _spawnTimeAdvance = levelData.spawnTimeAdvance;
         _maxHealth = levelData.maxHealth;
         _health = _maxHealth;
@@ -180,8 +179,8 @@ public class NoteGameManager : MonoBehaviour
         if (_damage == 3 && HealthNormalized() <= thirdCloudTrigger)
         {
             print("Cloud Triggered");
-            _isGameEnded = true;
             onCloudTriggered?.Invoke(this, EventArgs.Empty);
+            _statistics.score = _score;
             GameStateManager.OnChangeState?.Invoke(this, GameState.GameEnded);
         }
     }
@@ -191,7 +190,16 @@ public class NoteGameManager : MonoBehaviour
         if (_destroyedIndex == _notesArray.Length)
         {
             _statistics.isWin = true;
-            _isGameEnded = true;
+            _statistics.score = _score;
+            try
+            {
+                SaveManager.Instance.SetOpenLevel(true, _levelIndex + 1);
+            }
+            catch
+            {
+                print("last level ");
+            }
+
             GameStateManager.OnChangeState?.Invoke(this, GameState.GameEnded);
         }
     }
@@ -213,7 +221,7 @@ public class NoteGameManager : MonoBehaviour
         if (_hitIndexUp < _noteDataListUp.Count &&
             GetMusicSourceTime() >= _noteDataListUp[_hitIndexUp].TimeStamp + delayNiceHit)
         {
-            _noteDataListUp[_hitIndexUp].onNoteDestroy?.Invoke(this, EventArgs.Empty);
+            _noteDataListUp[_hitIndexUp].onNoteDestroy?.Invoke(this, false);
             _destroyedIndex++;
             print("miss up");
             _hitIndexUp++;
@@ -226,7 +234,7 @@ public class NoteGameManager : MonoBehaviour
         if (_hitIndexLeft < _noteDataListLeft.Count &&
             GetMusicSourceTime() >= _noteDataListLeft[_hitIndexLeft].TimeStamp + delayNiceHit)
         {
-            _noteDataListLeft[_hitIndexLeft].onNoteDestroy?.Invoke(this, EventArgs.Empty);
+            _noteDataListLeft[_hitIndexLeft].onNoteDestroy?.Invoke(this, false);
             _destroyedIndex++;
             print("miss left");
             _hitIndexLeft++;
@@ -239,7 +247,7 @@ public class NoteGameManager : MonoBehaviour
         if (_hitIndexRight < _noteDataListRight.Count &&
             GetMusicSourceTime() >= _noteDataListRight[_hitIndexRight].TimeStamp + delayNiceHit)
         {
-            _noteDataListRight[_hitIndexRight].onNoteDestroy?.Invoke(this, EventArgs.Empty);
+            _noteDataListRight[_hitIndexRight].onNoteDestroy?.Invoke(this, false);
             _destroyedIndex++;
             print("miss right");
             _hitIndexRight++;
@@ -252,7 +260,7 @@ public class NoteGameManager : MonoBehaviour
         if (_hitIndexDown < _noteDataListDown.Count &&
             GetMusicSourceTime() >= _noteDataListDown[_hitIndexDown].TimeStamp + delayNiceHit)
         {
-            _noteDataListDown[_hitIndexDown].onNoteDestroy?.Invoke(this, EventArgs.Empty);
+            _noteDataListDown[_hitIndexDown].onNoteDestroy?.Invoke(this, false);
             _destroyedIndex++;
             print("miss down");
             _hitIndexDown++;
@@ -343,6 +351,9 @@ public class NoteGameManager : MonoBehaviour
 
     private void OnInputPerformed(ref int index, List<NoteData> noteDataList)
     {
+        if(GameStateManager.GetState()!= GameState.Playing)
+            return;
+        
         if (index >= noteDataList.Count)
         {
             print($"Out of notes. index - {index}, count - {noteDataList.Count} ");
@@ -353,7 +364,7 @@ public class NoteGameManager : MonoBehaviour
         if (index < noteDataList.Count && (GetMusicSourceTime() >= noteData.TimeStamp - delayNiceHit &&
                                            GetMusicSourceTime() <= noteData.TimeStamp + delayNiceHit))
         {
-            noteData.onNoteDestroy?.Invoke(this, EventArgs.Empty);
+            noteData.onNoteDestroy?.Invoke(this, true);
             _multiplier++;
             _destroyedIndex++;
 

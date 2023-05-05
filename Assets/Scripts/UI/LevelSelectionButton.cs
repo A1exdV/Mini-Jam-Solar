@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class LevelSelectionButton : MonoBehaviour
 {
-    [SerializeField]private LevelDataSO levelDataSo;
+    [SerializeField] private LevelDataSO levelDataSo;
     private Button _button;
 
     private void Awake()
@@ -15,7 +15,13 @@ public class LevelSelectionButton : MonoBehaviour
     {
         _button.onClick.AddListener(() =>
         {
-            LevelDataHolder.Instance.LoadNewLevelData(levelDataSo);
+            if (SaveManager.Instance.IsLevelOpen(levelDataSo.index))
+                TransitionVisual.onTransitionRequired?.Invoke(this, new TransitionEventArgs
+                {
+                    toVisible = true,
+                    transitionTime = 1,
+                    callback = () => { LevelDataHolder.Instance.LoadNewLevelData(levelDataSo); }
+                });
         });
     }
 }

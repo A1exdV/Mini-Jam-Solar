@@ -9,7 +9,7 @@ public partial class NoteData
     public double TimeStamp { get; private set; }
     public NoteVisual NoteVisual { get; private set; }
     public EventHandler<double> onNoteMakeVisible;
-    public EventHandler onNoteDestroy;
+    public EventHandler<bool> onNoteDestroy;
 
     public NoteData(Note note, int index, double timeStamp, NoteVisual noteVisual)
     {

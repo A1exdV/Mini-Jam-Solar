@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
-    public static EventHandler onTransitionEnd;
-
     public static EventHandler onLoadedState;
     public static EventHandler onPlayingState;
     public static EventHandler onPausedState;
@@ -23,20 +21,7 @@ public class GameStateManager : MonoBehaviour
     private void Start()
     {
         _state = GameState.Loading;
-        onTransitionEnd += OnTransitionEnd;
         OnChangeState += ChangeState;
-    }
-
-    private void OnTransitionEnd(object sender, EventArgs e)
-    {
-        if (_state == GameState.Loaded)
-        {
-            OnChangeState?.Invoke(this, GameState.Playing);
-            return;
-        }
-
-        if (_state == GameState.Exiting)
-            OnChangeState?.Invoke(this, GameState.Exit);
     }
 
     private void ChangeState(object sender, GameState newState)
@@ -56,8 +41,8 @@ public class GameStateManager : MonoBehaviour
                 TransitionVisual.onTransitionRequired?.Invoke(this, new TransitionEventArgs
                 {
                     toVisible = false,
-                    transitionTime = 2,
-                    needCallback = true
+                    transitionTime = 1,
+                    callback = () => { OnChangeState?.Invoke(this, GameState.Playing); }
                 });
                 break;
             case GameState.Playing:
@@ -74,8 +59,8 @@ public class GameStateManager : MonoBehaviour
                 TransitionVisual.onTransitionRequired?.Invoke(this, new TransitionEventArgs
                 {
                     toVisible = true,
-                    transitionTime = 2,
-                    needCallback = true
+                    transitionTime = 1,
+                    callback = () => { OnChangeState?.Invoke(this, GameState.Exit); }
                 });
                 break;
             case GameState.Exit:
@@ -96,8 +81,6 @@ public class GameStateManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        onTransitionEnd = null;
-
         onLoadedState = null;
         onPlayingState = null;
         onPausedState = null;

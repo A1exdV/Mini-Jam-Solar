@@ -25,7 +25,9 @@ public class Countdown : MonoBehaviour
         if (NoteGameManager.Instance.GetMusicSourceTime() >=
             NoteGameManager.Instance.GetFirstNoteSpawnAdvanceTime() - countdownTimer)
         {
+            print("countDown!");
             countdownText.enabled = true;
+            _countdownStarted = true;
             StartCoroutine(CountdownRoutine());
         }
     }
@@ -40,16 +42,16 @@ public class Countdown : MonoBehaviour
         
         countdownText.text = timerInt.ToString();
         
-        while (timer <= 0)
+        while (timer >= 0)
         {
-            timer -= Time.deltaTime;
             
+            timerInt = Mathf.CeilToInt(timer);
             if (lastNumber != timerInt)
             {
                 countdownText.text = timerInt.ToString();
                 lastNumber = timerInt;
             }
-            
+            timer -= Time.deltaTime;
             yield return null;
         }
         

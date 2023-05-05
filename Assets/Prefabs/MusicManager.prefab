@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2771579467415420633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2771579467415420632}
+  - component: {fileID: 2771579467415420639}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2771579467415420632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2771579467415420633}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2771579467415420639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2771579467415420633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a5b1568680b3c41815a5127d0bbabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 0}
+  rainSource: {fileID: 0}
+  uiSfxList:
+  - {fileID: 8300000, guid: 6c445367d30676e408b2e2b5c905edaf, type: 3}
+  - {fileID: 8300000, guid: 44831182a73ee604da7ca80088dfe278, type: 3}
+  - {fileID: 8300000, guid: 897e5eae7be7bba4390623e994857820, type: 3}
+  - {fileID: 8300000, guid: 1cd282116a9e0374b989e3a59f24656f, type: 3}
+  - {fileID: 8300000, guid: 815a0d075d399da48b62c4560476303b, type: 3}
+  - {fileID: 8300000, guid: 29f7375d5f511c54ba40253955b09046, type: 3}
+  - {fileID: 8300000, guid: 175b1891267a6514c9524f665b25dbeb, type: 3}
+  missSoundList:
+  - {fileID: 8300000, guid: aa73094537b0c5743af572a75cae2198, type: 3}
+  - {fileID: 8300000, guid: 43db3aee0171cba49a99f9c6c93a9d42, type: 3}
+  - {fileID: 8300000, guid: 9c70935e5cb0b6e4b98d72db8352290e, type: 3}
+  - {fileID: 8300000, guid: 44249e9a04cc7a146a874767727368bf, type: 3}
+  thunderSoundList: []
+  winSound: {fileID: 0}
+  loseSound: {fileID: 0}

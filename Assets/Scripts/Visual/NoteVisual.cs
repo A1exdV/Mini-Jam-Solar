@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using Enums;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -9,6 +10,8 @@ namespace Visual
 {
     public class NoteVisual : MonoBehaviour
     {
+        [SerializeField] private GameObject onHitParticles;
+        
         private NoteData _noteData;
         private Image _image;
 
@@ -50,8 +53,13 @@ namespace Visual
             StopAllCoroutines();
         }
 
-        private void OnNoteDestroy(object sender, EventArgs e)
+        private void OnNoteDestroy(object sender, bool e)
         {
+            if (e)
+            {
+                Instantiate(onHitParticles, Camera.main.ScreenToWorldPoint(transform.GetChild(0).position),Quaternion.identity);
+            }
+            
             DOTween.Kill(transform);
             DOTween.Kill(_image);
             _noteData.onNoteMakeVisible -= OnNoteMakeVisible;
@@ -74,7 +82,8 @@ namespace Visual
             var timer = 0f;
             while (transform.localEulerAngles.y != _endAngle)
             {
-                timer += Time.deltaTime;
+                if(GameStateManager.GetState()== GameState.Playing)
+                    timer += Time.deltaTime;
                 var currentAngle = Mathf.LerpAngle(_startAngle, _endAngle,timer/(time*2));
                 transform.localEulerAngles = new Vector3(0, 0, currentAngle);
                 yield return null;

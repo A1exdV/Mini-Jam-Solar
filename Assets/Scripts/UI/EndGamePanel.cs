@@ -7,10 +7,8 @@ using UnityEngine.UI;
 
 public class EndGamePanel : MonoBehaviour
 {
-    [SerializeField] private Button restartButton;
-    [SerializeField] private Button mainMenuButton;
-    [SerializeField] private Button continueButton;
 
+    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI totalNotesText;
     [SerializeField] private TextMeshProUGUI notesHitText;
     [SerializeField] private TextMeshProUGUI notesMissedTest;
@@ -27,6 +25,7 @@ public class EndGamePanel : MonoBehaviour
     private void OnGameEnd(object sender, EventArgs e)
     {
         var statistics = NoteGameManager.Instance.GetStatistics();
+        scoreText.text = statistics.score.ToString();
         totalNotesText.text = statistics.totalNotes.ToString();
         notesHitText.text = statistics.totalNotesHit.ToString();
         notesMissedTest.text =statistics.totalNotesMissed.ToString();

@@ -3,6 +3,7 @@
 [CreateAssetMenu(fileName = "NewLevelData",menuName = "Scriptable Object/new level data")]
 public class LevelDataSO: ScriptableObject
 {
+    public int index;
     public AudioClip audioClip;
     public string midiFileLocation;
 

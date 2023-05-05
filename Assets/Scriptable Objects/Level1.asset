@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7494f01673149d4aea25754c0efda50, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 7a63833fed9b7d048a3782e76bf6e9ac, type: 3}
-  midiFileLocation: Level01.mid
+  index: 0
+  audioClip: {fileID: 8300000, guid: d299583237e1add4288edfe49514dad2, type: 3}
+  midiFileLocation: 01_MidiBeach.mid
   sceneLocation: 2
   spawnTimeAdvance: 2
   maxHealth: 10
